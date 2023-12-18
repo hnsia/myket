@@ -24,7 +24,7 @@ const SignUpPage = () => {
     resolver: zodResolver(AuthCredentialsValidator),
   });
 
-  const { data } = trpc.auth.useQuery();
+  //const { data } = trpc.auth.useQuery();
 
   const onSubmit = ({ email, password }: TAuthCredentialsValidator) => {};
 
