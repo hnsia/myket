@@ -9,12 +9,12 @@ dotenv.config({
 });
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.resend.com",
+  host: "smtp.sendgrid.net",
   secure: true,
   port: 465,
   auth: {
-    user: "resend",
-    pass: process.env.RESEND_API_KEY,
+    user: "apikey",
+    pass: process.env.SENDGRID_API_KEY,
   },
 });
 
@@ -46,7 +46,7 @@ export const getPayloadClient = async ({
     cached.promise = payload.init({
       email: {
         transport: transporter,
-        fromAddress: "onboarding@resend.dev",
+        fromAddress: "dev_shn@outlook.com",
         fromName: "MyKet",
       },
       secret: process.env.PAYLOAD_SECRET,
